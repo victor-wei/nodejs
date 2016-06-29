@@ -1,0 +1,26 @@
+{
+  "name": "victor_wechat",
+  "version": "1.0.0",
+  "description": "victor for wechat",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/victor-wei/nodejs.git"
+  },
+  "keywords": [
+    "wechat"
+  ],
+  "author": "victor.weihe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victor-wei/nodejs/issues"
+  },
+  "homepage": "https://github.com/victor-wei/nodejs#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "weixin-api": "^0.1.7"
+  }
+}
