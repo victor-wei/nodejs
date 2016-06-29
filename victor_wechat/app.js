@@ -26,6 +26,16 @@ weixin.textMsg(function(msg) {
     var resMsg = {};
 
     switch (msg.content) {
+       case "Eaven" :
+            // 返回文本消息
+            resMsg = {
+                fromUserName : msg.toUserName,
+                toUserName : msg.fromUserName,
+                msgType : "text",
+                content : "Hello daxiaoje",
+                funcFlag : 0
+            };
+            break;
         case "文本" :
             // 返回文本消息
             resMsg = {
