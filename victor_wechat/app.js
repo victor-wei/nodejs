@@ -8,10 +8,10 @@ app.get('/', function(req, res) {
     // 签名成功
     if (weixin.checkSignature(req)) {
         res.status(200).send(req.query.echostr);
-	console.log('check succeed');
+	console.log("check succeed");
     } else {
         res.status(200).send('fail');
-console.log('check fail');
+console.log("check fail");
     }
 });
 
