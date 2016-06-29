@@ -1,0 +1,27 @@
+{
+  "name": "lesson3",
+  "version": "1.0.0",
+  "description": "pachong",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/victor-wei/nodejs.git"
+  },
+  "keywords": [
+    "pachong"
+  ],
+  "author": "victor.weihe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victor-wei/nodejs/issues"
+  },
+  "homepage": "https://github.com/victor-wei/nodejs#readme",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "express": "^4.14.0",
+    "superagent": "^2.0.0"
+  }
+}
