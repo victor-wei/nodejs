@@ -1,0 +1,14 @@
+{
+  "name": "baidumap",
+  "version": "0.0.0",
+  "description": "baidumap",
+  "main": "index.js",
+  "scripts": {
+    "test": "map"
+  },
+  "keywords": [
+    "map"
+  ],
+  "author": "victor-wei",
+  "license": "BSD-2-Clause"
+}
