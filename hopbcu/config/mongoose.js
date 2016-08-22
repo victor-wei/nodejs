@@ -4,6 +4,7 @@ var config = require('./config.js');
 module.exports = function(){
 	var db = mongoose.connect(config.mongodb);
 	require('../models/user.server.model.js');
+	require('../models/location.server.model.js');
 	return db;
 };
 
