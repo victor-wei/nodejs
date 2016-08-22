@@ -8,6 +8,10 @@ var express = require('express')
 
 var app = module.exports = express.createServer();
 
+var mongoose = require('./config/mongoose.js');
+var db = mongoose();
+var users = require('./routes/users')
+
 // Configuration
 
 app.configure(function(){
@@ -16,6 +20,7 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
+  app.use('/users',users);
   app.use(express.static(__dirname + '/public'));
 });
 
