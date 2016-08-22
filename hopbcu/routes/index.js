@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/findtudou',function(req,res,next){
-	res.render('mymap',{title:'Findtudou'})
+	res.render('mymap',{title:'Findtudou',latitude:104.098,,longitude: 30.606})
 });
 
 module.exports = router;
