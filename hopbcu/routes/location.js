@@ -10,7 +10,7 @@ var Location = mongoose.model('Location');
 router.post('/hopbcu/location',function(req,res,next){
 	var jsoninfo = eval('(' + req.body.json + ')');
 
-	console.log(jsoninfo+"  jsoninfo");
+	console.log(jsoninfo);
 
 	var post = '';
 
