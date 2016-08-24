@@ -11,9 +11,9 @@ router.post('/hopbcu/location',function(req,res,next){
 	
     var location = new Location({
     	
-		latitude:req.body.data.latitude,
-		longitude:req.body.data.longitude,
-		locationTime:req.body.data.locationTime
+		latitude:req.body.latitude,
+		longitude:req.body.longitude,
+		locationTime:req.body.locationTime
     });
 	
 
