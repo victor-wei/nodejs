@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 var Location = mongoose.model('Location');
 
 router.post('/hopbcu/location',function(req,res,next){
-	var jsoninfo = eval('(' + req.body.data + ')');
+	var jsoninfo =  req.body.data ;
 
 	console.log(jsoninfo+" jsoninfo");
 
