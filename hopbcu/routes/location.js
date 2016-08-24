@@ -16,6 +16,7 @@ router.post('/hopbcu/location',function(req,res,next){
 
 	req.on('data',function(chunk){
 		post += chunk;
+		console.log("on!"+post);
 	});
 	req.on('end',function(){
 
