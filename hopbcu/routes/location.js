@@ -20,7 +20,7 @@ router.post('/hopbcu/location',function(req,res,next){
 	});
 	req.on('end',function(){
 
-		post = querystring.parse(post);
+		//post = querystring.parse(post);
 
 		var location = new Location(post);
 
