@@ -10,7 +10,7 @@ var Location = mongoose.model('Location');
 router.post('/hopbcu/location',function(req,res,next){
 	
     var location = new Location({
-    	
+
 		latitude:req.body.latitude,
 		longitude:req.body.longitude,
 		datetime:req.body.datetime
@@ -20,7 +20,7 @@ router.post('/hopbcu/location',function(req,res,next){
 	location.save(function(err){
 		if(err){
 			res.end('Error');
-			return next();
+			//return next();
 		}
 		res.end("save success ");
 	});
