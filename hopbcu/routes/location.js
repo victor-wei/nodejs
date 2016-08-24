@@ -19,6 +19,8 @@ router.post('/hopbcu/location',function(req,res,next){
 
 		var location = new Location(post);
 
+		console.log("OK!"+post);
+
 		location.save(function(err){
 			if(err){
 				res.end('Error');
