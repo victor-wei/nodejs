@@ -11,7 +11,8 @@ var LocationSchema = new mongoose.Schema({
 	day:String,
 	hour:String,
 	minute:String,
-	second:String
+	second:String,
+	dataNumber:String
 });
 
 mongoose.model('Location',LocationSchema);
