@@ -21,7 +21,7 @@ router.post('/hopbcu/location',function(req,res,next){
 	req.on('end',function(){
 
 		post = querystring.parse(post);
-
+		post = JSON.stringify(post);
 		var location = new Location(post);
 
 		console.log("OK!"+post);
