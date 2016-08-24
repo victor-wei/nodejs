@@ -24,7 +24,7 @@ router.post('/hopbcu/location',function(req,res,next){
 			res.end('Error');
 			return next();
 		}
-		res.end();
+		//res.end();
 	});
 
 	
