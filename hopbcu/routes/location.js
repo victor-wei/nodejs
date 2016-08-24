@@ -13,7 +13,7 @@ router.post('/hopbcu/location',function(req,res,next){
     	
 		latitude:req.body.latitude,
 		longitude:req.body.longitude,
-		locationTime:req.body.locationTime
+		datetime:req.body.datetime
     });
 	
 
