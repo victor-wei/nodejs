@@ -32,7 +32,7 @@ router.post('/hopbcu/location',function(req,res,next){
 			}
 		});
 
-		res.end(util.inspect(post));
+		res.end();
 	});
 	//res.end();
 });
