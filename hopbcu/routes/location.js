@@ -12,28 +12,29 @@ router.post('/hopbcu/location',function(req,res,next){
 
 	console.log(jsoninfo);
 
-	var post = '';
+	// var post = '';
 
-	req.on('data',function(chunk){
-		post += chunk;
-	});
-	req.on('end',function(){
+	// req.on('data',function(chunk){
+	// 	post += chunk;
+	// });
+	// req.on('end',function(){
 
-		post = querystring.parse(post);
+	// 	post = querystring.parse(post);
 
-		var location = new Location(post);
+	// 	var location = new Location(post);
 
-		console.log("OK!"+post);
+	// 	console.log("OK!"+post);
 
-		location.save(function(err){
-			if(err){
-				res.end('Error');
-				return next();
-			}
-		});
+	// 	location.save(function(err){
+	// 		if(err){
+	// 			res.end('Error');
+	// 			return next();
+	// 		}
+	// 	});
 
-		res.end(util.inspect(post));
-	});
+	// 	res.end(util.inspect(post));
+	// });
+	res.end();
 });
 
 module.exports = router;
