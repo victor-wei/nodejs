@@ -22,7 +22,7 @@ var map = new BMap.Map("allmap");
 //var m_city = "北京";
 var gpspoint = new BMap.Point(<%= latitude %>, <%= longitude %>);
 
-BMap.Convertor.translate(gpspoint,0,translateCallback);
+
 
 map.centerAndZoom(gpspoint, 13);
 var marker = new BMap.Marker(gpspoint);        // 创建标注    
