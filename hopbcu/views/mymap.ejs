@@ -22,9 +22,9 @@ var map = new BMap.Map("allmap");
 //var m_city = "北京";
 var gpspoint = new BMap.Point(<%= latitude %>, <%= longitude %>);
 
-//map.centerAndZoom(gpspoint, 13);
-//var marker = new BMap.Marker(gpspoint);        // 创建标注    
-//map.addOverlay(marker);                     // 将标注添加到地图中                              // 初始化地图,设置中心点坐标和地图级别
+map.centerAndZoom(gpspoint, 13);
+var marker = new BMap.Marker(gpspoint);        // 创建标注    
+map.addOverlay(marker);                     // 将标注添加到地图中                              // 初始化地图,设置中心点坐标和地图级别
 map.addControl(new BMap.OverviewMapControl());              //添加缩略地图控件
 map.enableScrollWheelZoom();                               //启用滚轮放大缩小
 
@@ -48,16 +48,17 @@ alert(e.point.lng + "," + e.point.lat);
 //坐标转换完之后的回调函数
 translateCallback = function (point){
     var marker = new BMap.Marker(point);
+    map.clearOverlays();
     map.addOverlay(marker);
-    var label = new BMap.Label("我是百度标注哦",{offset:new BMap.Size(20,-10)});
-    marker.setLabel(label); //添加百度label
-    map.setCenter(point);
+    //var label = new BMap.Label("我是百度标注哦",{offset:new BMap.Size(20,-10)});
+    //marker.setLabel(label); //添加百度label
+    //map.setCenter(point);
     alert("转化为百度坐标为："+point.lng + "," + point.lat);
 }
 
 setTimeout(function(){
     BMap.Convertor.translate(gpspoint,0,translateCallback);     //真实经纬度转成百度坐标
-}, 500);
+}, 2000);
 
 
 function SetRadius(radius){
