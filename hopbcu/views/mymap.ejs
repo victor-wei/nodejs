@@ -19,8 +19,8 @@
 
 
 
-    var x = <%=items[0].lonDegree +items[0].lonMin/60%>;
-    var y = <%=items[0].latDegree +items[0].latMin/60%>;
+    var x = <%=items[0].lonDegree +items[0].lonMin/1000/60%>;
+    var y = <%=items[0].latDegree +items[0].latMin/1000/60%>;
     alert(x,y);
     var ggPoint = new BMap.Point(x,y);
 
