@@ -22,9 +22,9 @@ var map = new BMap.Map("allmap");
 //var m_city = "北京";
 var gpspoint = new BMap.Point(<%= latitude %>, <%= longitude %>);
 
-map.centerAndZoom(gpspoint, 13);
-var marker = new BMap.Marker(gpspoint);        // 创建标注    
-map.addOverlay(marker);                     // 将标注添加到地图中                              // 初始化地图,设置中心点坐标和地图级别
+//map.centerAndZoom(gpspoint, 13);
+//var marker = new BMap.Marker(gpspoint);        // 创建标注    
+//map.addOverlay(marker);                     // 将标注添加到地图中                              // 初始化地图,设置中心点坐标和地图级别
 map.addControl(new BMap.OverviewMapControl());              //添加缩略地图控件
 map.enableScrollWheelZoom();                               //启用滚轮放大缩小
 
