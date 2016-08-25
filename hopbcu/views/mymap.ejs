@@ -58,6 +58,7 @@ translateCallback = function (point){
 
 setTimeout(function(){
     BMap.Convertor.translate(gpspoint,0,translateCallback);     //真实经纬度转成百度坐标
+    alert("转化为百度坐标为："+gpspoint.lng + "," + gpspoint.lat);
 }, 2000);
 
 
