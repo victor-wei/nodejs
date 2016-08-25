@@ -1,86 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-<style type="text/css">  
-    html{height:100%}    
-    body{height:100%;margin:0px;padding:0px}    
-    #allmap{height:100%}    
-</style>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=yTdOFtxX6c7mOnPNcCKCNn9XYrKz7XGQ"></script>
-<title><%= title %></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=yTdOFtxX6c7mOnPNcCKCNn9XYrKz7XGQ"></script>
+    <title>GPS转百度</title>
 </head>
 <body>
-<div id="allmap"></div>
+    <div id="allmap"></div>
 </body>
 </html>
 <script type="text/javascript">
+    // 百度地图API功能
+    //GPS坐标
+    var x = items[0].latDegree;
+    var y = items[0].lonDegree;
+    var ggPoint = new BMap.Point(x,y);
 
-// 百度地图API功能
-var map = new BMap.Map("allmap");
-//var m_city = "北京";
-var gpspoint = new BMap.Point(<%= latitude %>, <%= longitude %>);
+    //地图初始化
+    var bm = new BMap.Map("allmap");
+    bm.centerAndZoom(ggPoint, 15);
+    bm.addControl(new BMap.NavigationControl());
 
+    //添加gps marker和label
+    var markergg = new BMap.Marker(ggPoint);
+    bm.addOverlay(markergg); //添加GPS marker
+    var labelgg = new BMap.Label("未转换的GPS坐标（错误）",{offset:new BMap.Size(20,-10)});
+    markergg.setLabel(labelgg); //添加GPS label
 
+    //坐标转换完之后的回调函数
+    translateCallback = function (data){
+      if(data.status === 0) {
+        var marker = new BMap.Marker(data.points[0]);
+        bm.addOverlay(marker);
+        var label = new BMap.Label("转换后的百度坐标（正确）",{offset:new BMap.Size(20,-10)});
+        marker.setLabel(label); //添加百度label
+        bm.setCenter(data.points[0]);
+      }
+    }
 
-map.centerAndZoom(gpspoint, 13);
-var marker = new BMap.Marker(gpspoint);        // 创建标注    
-map.addOverlay(marker);                     // 将标注添加到地图中                              // 初始化地图,设置中心点坐标和地图级别
-map.addControl(new BMap.NavigationControl());              //添加缩略地图控件
-map.enableScrollWheelZoom();                               //启用滚轮放大缩小
-
-var m_radius = 1000;
-var m_point;
-
-
-map.addEventListener("click",function(e){
-var circle = new BMap.Circle(e.point,m_radius);
-map.clearOverlays();
-map.addOverlay(circle);
-m_point = e.point;
-alert(e.point.lng + "," + e.point.lat);
-});
-
-// function SetCity(city){
-//     m_city = city;
-// }
-
-
-//坐标转换完之后的回调函数
-translateCallback = function (point){
-    var marker = new BMap.Marker(point);
-    map.clearOverlays();
-    map.addOverlay(marker);
-    var label = new BMap.Label("我是百度标注哦",{offset:new BMap.Size(20,-10)});
-    marker.setLabel(label); //添加百度label
-    map.setCenter(point);
-    alert("转化为百度坐标为1："+point.lng + "," + point.lat);
-}
-
-setTimeout(function(){
-    alert("转化为百度坐标为2："+gpspoint.lng + "," + gpspoint.lat);
-    BMap.Convertor.translate(gpspoint,0,translateCallback);     //真实经纬度转成百度坐标
-    
-}, 2000);
-
-
-function SetRadius(radius){
-    m_radius = radius;
-}
-
-
-function AutoSetCircle(){
-    var circle2 = new BMap.Circle(m_point,m_radius);
-    map.clearOverlays();
-    map.addOverlay(circle2);
-}
-
-function ReturnLngLat(){
-    var LngLat = new Array();
-    LngLat[0] = m_point.lng;
-    LngLat[1] = m_point.lat;
-    return LngLat;
-}
+    setTimeout(function(){
+        var convertor = new BMap.Convertor();
+        var pointArr = [];
+        pointArr.push(ggPoint);
+        convertor.translate(pointArr, 1, 5, translateCallback)
+    }, 1000);
 </script>
-
