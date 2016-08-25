@@ -19,7 +19,7 @@ router.get('/findtudou',function(req,res,next){
 				res.end('Error');
 				return next();
 		}
-		res.json(docs);
+		//res.json(docs);
 
 		res.render('mymap', {
  							items: docs
