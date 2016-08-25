@@ -15,6 +15,10 @@ router.get('/', function(req, res, next) {
 router.get('/findtudou',function(req,res,next){
 
 	Location.find({year:0},function(err,docs){
+		if(err){
+				res.end('Error');
+				return next();
+		}
 		res.render('mymap', {
  							items: docs
 						  });
