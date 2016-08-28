@@ -21,7 +21,9 @@ router.post('/hopbcu/location',function(req,res,next){
 		hour:req.body.hour,
 		minute:req.body.minute,
 		second:req.body.second,
-		dataNumber:req.body.datanumber
+		dataNumber:req.body.datanumber,
+		bdLat:req.body.bdLat,
+		bdLon:req.body.bdLon
     });
 	
 
