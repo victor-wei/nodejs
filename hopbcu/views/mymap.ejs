@@ -36,7 +36,7 @@
     var y9 = <%=items[9].latDegree %> + <%=items[9].latMin/1000/60%>;
     
 
-    var points = [new BMap.Point(116.3786889372559,39.90762965106183),               
+    var points[100] = [new BMap.Point(116.3786889372559,39.90762965106183),               
                   
                   new BMap.Point(x1,y1)
                   ,
@@ -62,7 +62,7 @@
     var xl = <%=items[i].lonDegree%> + <%=items[i].lonMin/1000/60%>;
     var yl = <%=items[i].latDegree %> + <%=items[i].latMin/1000/60%>;
     points[10+<%=i%>] = new BMap.Point(xl,yl);
-     alert(xl);
+
     <% } %>
 
     var x = <%=items[0].lonDegree%> + <%=items[0].lonMin/1000/60%>;
