@@ -15,8 +15,8 @@ router.post('/hopbcu/location',function(req,res,next){
     	if(data.status !=0){
     		return;
     	}
-    	var points = data.result;
-    	var transresult = points[0];
+    	// var points = data.result;
+    	// var transresult = points[0];
     	//var point = new BMap.Point(transresult.x,transresult.y);
   //   	var location = new Location({
 
