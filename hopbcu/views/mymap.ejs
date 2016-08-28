@@ -7,7 +7,7 @@
         body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
     </style>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=yTdOFtxX6c7mOnPNcCKCNn9XYrKz7XGQ"></script>
-    <title>GPS转百度</title>
+    <title>tudou</title>
 </head>
 <body>
     <div id="allmap"></div>
@@ -58,14 +58,14 @@
 
     ];
 
-    var pointsArray = new Array();
+    // var pointsArray = new Array();
 
-    <% for(var i=0; i<items.length; i++) { %>
-    var xl = <%=items[i].lonDegree%> + <%=items[i].lonMin/1000/60%>;
-    var yl = <%=items[i].latDegree %> + <%=items[i].latMin/1000/60%>;
+    // <% for(var i=0; i<items.length; i++) { %>
+    // var xl = <%=items[i].lonDegree%> + <%=items[i].lonMin/1000/60%>;
+    // var yl = <%=items[i].latDegree %> + <%=items[i].latMin/1000/60%>;
    // pointsArray.push(new BMap.Point(xl,yl));
 
-    <% } %>
+    // <% } %>
 
     var x = <%=items[0].lonDegree%> + <%=items[0].lonMin/1000/60%>;
     var y = <%=items[0].latDegree %> + <%=items[0].latMin/1000/60%>;
