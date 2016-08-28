@@ -34,13 +34,13 @@
 
      <% for(var i=1; i<items.length; i++) { %>
     var xl = <%=items[i].bdLon%> ;
-    var yl = <%=items[i].bdLat%>>;
+    var yl = <%=items[i].bdLat%>;
     pointsArray.push(new BMap.Point(xl,yl));
 
     <% } %>
 
     var x = <%=items[i].bdLon%> ;
-    var y = <%=items[i].bdLat %>>;
+    var y = <%=items[i].bdLat%>;
    // alert(x,y);
     var ggPoint = new BMap.Point(x,y);
 
