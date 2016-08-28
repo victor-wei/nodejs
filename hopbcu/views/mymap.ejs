@@ -58,12 +58,12 @@
 
     ];
 
-    //var pointsArray = [];
+    var pointsArray = [];
 
     <% for(var i=0; i<items.length; i++) { %>
     var xl = <%=items[i].lonDegree%> + <%=items[i].lonMin/1000/60%>;
     var yl = <%=items[i].latDegree %> + <%=items[i].latMin/1000/60%>;
-    //pointsArray.push(new BMap.Point(xl,yl));
+    pointsArray.push(new BMap.Point(xl,yl));
 
     <% } %>
 
@@ -92,6 +92,6 @@
     setTimeout(function(){
         var convertor = new BMap.Convertor();
     
-         convertor.translate(pointsArray, 1, 5, translateCallback)
+         convertor.translate(points, 1, 5, translateCallback)
     }, 1000);
 </script>
