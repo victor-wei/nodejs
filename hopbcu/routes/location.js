@@ -20,9 +20,9 @@ router.post('/hopbcu/location',function(req,res,next){
     	var point = new BMap.Point(transresult.x,transresult.y);
     	var location = new Location({
 
-		latDegree:transresult.Y,
+		latDegree:transresult.y,
 		latMin:req.body.latMin,
-		lonDegree:transresult.X,
+		lonDegree:transresult.x,
 		lonMin:req.body.lonMin,
 		year:req.body.year,
 		month:req.body.month,
