@@ -58,14 +58,14 @@
 
     ];
 
-    // var pointsArray = new Array();
+    var pointsArray = new Array();
 
-    // <% for(var i=0; i<items.length; i++) { %>
-    // var xl = <%=items[i].lonDegree%> + <%=items[i].lonMin/1000/60%>;
-    // var yl = <%=items[i].latDegree %> + <%=items[i].latMin/1000/60%>;
-   // pointsArray.push(new BMap.Point(xl,yl));
+    <% for(var i=0; i<items.length; i++) { %>
+    var xl = <%=items[i].lonDegree%> + <%=items[i].lonMin/1000/60%>;
+    var yl = <%=items[i].latDegree %> + <%=items[i].latMin/1000/60%>;
+   pointsArray.push(new BMap.Point(xl,yl));
 
-    // <% } %>
+    <% } %>
 
     var x = <%=items[0].lonDegree%> + <%=items[0].lonMin/1000/60%>;
     var y = <%=items[0].latDegree %> + <%=items[0].latMin/1000/60%>;
