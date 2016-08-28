@@ -9,6 +9,10 @@ var Location = mongoose.model('Location');
 
 router.post('/hopbcu/location',function(req,res,next){
 	
+
+	// var send = function(){
+	// 	var positionUrl = 
+	// }
     var location = new Location({
 
 		latDegree:req.body.latDegree,
