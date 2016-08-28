@@ -58,10 +58,12 @@
 
     ];
 
+    var pointsArray = [];
+
     <% for(var i=0; i<items.length; i++) { %>
     var xl = <%=items[i].lonDegree%> + <%=items[i].lonMin/1000/60%>;
     var yl = <%=items[i].latDegree %> + <%=items[i].latMin/1000/60%>;
-    points[<%=i%>] = new BMap.Point(xl,yl);
+    pointsArray.push(new BMap.Point(xl,yl));
 
     <% } %>
 
@@ -80,9 +82,9 @@
     //坐标转换完之后的回调函数
     translateCallback = function (data){
       if(data.status === 0) {
-        for (var i = 0; i < data.points.length; i++) {
-            bm.addOverlay(new BMap.Marker(data.points[i]));
-            bm.setCenter(data.points[i]);
+        for (var i = 0; i < data.pointsArray.length; i++) {
+            bm.addOverlay(new BMap.Marker(data.pointsArray[i]));
+            bm.setCenter(data.pointsArray[i]);
         }
       }
     }
@@ -90,6 +92,6 @@
     setTimeout(function(){
         var convertor = new BMap.Convertor();
     
-         convertor.translate(points, 1, 5, translateCallback)
+         convertor.translate(pointsArray, 1, 5, translateCallback)
     }, 1000);
 </script>
