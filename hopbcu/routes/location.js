@@ -42,9 +42,12 @@ router.post('/hopbcu/location',function(req,res,next){
 	
   //   });
     }
+
+    var lat = req.body.latDegree+req.body.latMin/1000/60;
+    var lon = req.body.lonDegree+req.body.lonMin/1000/60;
 	var send = function(){
 		var positionUrl = "http://api.map.baidu.com/geoconv/v1/?coords="+
-		(req.body.lonDegree+req.body.lonMin/1000/60)+','+(req.body.latDegree+req.body.latMin/1000/60)
+		lon+','+lat
 		+"&from=1&to=5&ak=yTdOFtxX6c7mOnPNcCKCNn9XYrKz7XGQ&callback=callback";
         var script = document.createElement('script');
         script.src = positionUrl;
