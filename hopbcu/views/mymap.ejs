@@ -80,19 +80,31 @@
     bm.addControl(new BMap.NavigationControl());
 
 
-    //坐标转换完之后的回调函数
-    translateCallback = function (data){
-      if(data.status === 0) {
-        for (var i = 0; i < data.points.length; i++) {
-            bm.addOverlay(new BMap.Marker(data.points[i]));
-            bm.setCenter(data.points[i]);
-        }
-      }
-    }
+    // //坐标转换完之后的回调函数
+    // translateCallback = function (data){
+    //   if(data.status === 0) {
+    //     for (var i = 0; i < data.points.length; i++) {
+    //         bm.addOverlay(new BMap.Marker(data.points[i]));
+    //         bm.setCenter(data.points[i]);
+    //     }
+    //   }
+    // }
 
-    setTimeout(function(){
-        var convertor = new BMap.Convertor();
+    // setTimeout(function(){
+    //     var convertor = new BMap.Convertor();
     
-         convertor.translate(pointsArray, 1, 5, translateCallback)
-    }, 1000);
+    //      convertor.translate(pointsArray, 1, 5, translateCallback)
+    // }, 1000);
+
+
+    var options = {
+            size: BMAP_POINT_SIZE_SMALL,
+            shape: BMAP_POINT_SHAPE_STAR,
+            color: '#d340c3'
+        }
+        var pointCollection = new BMap.PointCollection(pointsArray, options);  // 初始化PointCollection
+        pointCollection.addEventListener('click', function (e) {
+          alert('单击点的坐标为：' + e.point.lng + ',' + e.point.lat);  // 监听点击事件
+        });
+        bm.addOverlay(pointCollection);  // 添加Overlay
 </script>
