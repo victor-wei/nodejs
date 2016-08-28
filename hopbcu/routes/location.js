@@ -38,9 +38,9 @@ router.post('/hopbcu/location',function(req,res,next){
 		// 	res.end('Error');
 		// 	//return next();
 		// }
-		res.end("save success ");
+		// res.end("save success ");
 	
-    });
+  //   });
     }
 	var send = function(){
 		var positionUrl = "http://api.map.baidu.com/geoconv/v1/?coords="+
