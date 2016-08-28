@@ -18,26 +18,26 @@ router.post('/hopbcu/location',function(req,res,next){
     	var points = data.result;
     	var transresult = points[0];
     	//var point = new BMap.Point(transresult.x,transresult.y);
-    	var location = new Location({
+  //   	var location = new Location({
 
-		latDegree:transresult.y,
-		latMin:req.body.latMin,
-		lonDegree:transresult.x,
-		lonMin:req.body.lonMin,
-		year:req.body.year,
-		month:req.body.month,
-		day:req.body.day,
-		hour:req.body.hour,
-		minute:req.body.minute,
-		second:req.body.second,
-		dataNumber:req.body.datanumber
-		});
+		// latDegree:transresult.y,
+		// latMin:req.body.latMin,
+		// lonDegree:transresult.x,
+		// lonMin:req.body.lonMin,
+		// year:req.body.year,
+		// month:req.body.month,
+		// day:req.body.day,
+		// hour:req.body.hour,
+		// minute:req.body.minute,
+		// second:req.body.second,
+		// dataNumber:req.body.datanumber
+		// });
 
-		location.save(function(err){
-		if(err){
-			res.end('Error');
-			//return next();
-		}
+		// location.save(function(err){
+		// if(err){
+		// 	res.end('Error');
+		// 	//return next();
+		// }
 		res.end("save success ");
 	
     });
