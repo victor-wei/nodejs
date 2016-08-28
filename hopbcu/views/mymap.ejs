@@ -61,7 +61,7 @@
     <% for(var i=0; i<items.length; i++) { %>
     var xl = <%=items[i].lonDegree%> + <%=items[i].lonMin/1000/60%>;
     var yl = <%=items[i].latDegree %> + <%=items[i].latMin/1000/60%>;
-    points[10+<%=i%>] = new BMap.Point(xl,yl);
+    points[<%=i%>] = new BMap.Point(xl,yl);
 
     <% } %>
 
