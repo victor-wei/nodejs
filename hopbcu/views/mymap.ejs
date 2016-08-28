@@ -58,7 +58,8 @@
 
     ];
 
-    var pointsArray = new Array();
+    var pointsArray = [] ;
+    pointsArray.push(new BMap.Point(116.3786889372559,39.90762965106183));
 
     <% for(var i=0; i<items.length; i++) { %>
     var xl = <%=items[i].lonDegree%> + <%=items[i].lonMin/1000/60%>;
