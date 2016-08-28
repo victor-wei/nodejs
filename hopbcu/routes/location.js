@@ -31,6 +31,7 @@ router.post('/hopbcu/location',function(req,res,next){
 		minute:req.body.minute,
 		second:req.body.second,
 		dataNumber:req.body.datanumber
+		});
 
 		location.save(function(err){
 		if(err){
@@ -38,7 +39,7 @@ router.post('/hopbcu/location',function(req,res,next){
 			//return next();
 		}
 		res.end("save success ");
-	});
+	
     });
     }
 	var send = function(){
