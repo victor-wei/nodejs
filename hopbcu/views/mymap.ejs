@@ -18,13 +18,13 @@
     //GPS坐标
   
 
-    var pointsArray = [] ;
-    pointsArray.push(new BMap.Point(116.3786889372559,39.90762965106183));
+    var points = [] ;
+    points.push(new BMap.Point(116.3786889372559,39.90762965106183));
 
     <% for(var i=1; i<items.length; i++) { %>
     var xl = <%=items[i].lonDegree%> + <%=items[i].lonMin/1000/60%>;
     var yl = <%=items[i].latDegree %> + <%=items[i].latMin/1000/60%>;
-    pointsArray.push(new BMap.Point(xl,yl));
+    points.push(new BMap.Point(xl,yl));
 
     <% } %>
 
@@ -65,7 +65,7 @@
     setTimeout(function(){
         var convertor = new BMap.Convertor();
     
-         convertor.translate(pointsArray, 1, 5, translateCallback)
+         convertor.translate(points, 1, 5, translateCallback)
     }, 2000);
 
 
