@@ -53,7 +53,7 @@
 
     // //坐标转换完之后的回调函数
     translateCallback = function (data){
-      if(data.status === 0) {
+      if(data.status == 0) {
         for (var i = 0; i < data.points.length; i++) {
             bm.addOverlay(new BMap.Marker(data.points[i]));
             bm.setCenter(data.points[i]);
