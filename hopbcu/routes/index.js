@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/findtudou',function(req,res,next){
 
-	Location.find({year:0,{"bdLat":{"$gt":30}}},function(err,docs){
+	Location.find({year:0,"bdLat":{"$gt":30}},function(err,docs){
 		if(err){
 				res.end('Error');
 				return next();
