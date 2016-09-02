@@ -47,7 +47,7 @@
    
     //地图初始化
     var bm = new BMap.Map("allmap");
-    bm.centerAndZoom(ggPoint, 15);
+    // bm.centerAndZoom(ggPoint, 15);
     bm.addControl(new BMap.NavigationControl());
 
 
@@ -72,14 +72,14 @@
     
 //          convertor.translate(pointsArray, 1, 5, translateCallback);
 
-    // var options = {
-    //         size: BMAP_POINT_SIZE_SMALL,
-    //         shape: BMAP_POINT_SHAPE_STAR,
-    //         color: '#d340c3'
-    //     }
-    //     var pointCollection = new BMap.PointCollection(pointsArray, options);  // 初始化PointCollection
+    var options = {
+            size: BMAP_POINT_SIZE_SMALL,
+            shape: BMAP_POINT_SHAPE_STAR,
+            color: '#d340c3'
+        }
+        var pointCollection = new BMap.PointCollection(pointsArray, options);  // 初始化PointCollection
     //     pointCollection.addEventListener('click', function (e) {
     //       alert('单击点的坐标为：' + e.point.lng + ',' + e.point.lat);  // 监听点击事件
     //     });
-    //     bm.addOverlay(pointCollection);  // 添加Overlay
+        bm.addOverlay(pointCollection);  // 添加Overlay
 </script>
