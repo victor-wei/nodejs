@@ -35,7 +35,7 @@
      <% for(var i=1; i<items.length; i++) { %>
     var xl = <%=items[i].bdLon%> ;
     var yl = <%=items[i].bdLat%>;
-    pointsArray.push(new BMap.Point(xl,yl));
+    points.push(new BMap.Point(xl,yl));
 
     <% } %>
 
