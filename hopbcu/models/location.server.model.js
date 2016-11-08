@@ -16,7 +16,7 @@ var LocationSchema = new mongoose.Schema({
 	bdLat:String,
 	bdLon:String,
 	ew:String,
-	ns:String.
+	ns:String,
 	isPackLocation:String
 });
 
