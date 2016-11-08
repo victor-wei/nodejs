@@ -23,7 +23,10 @@ router.post('/hopbcu/location',function(req,res,next){
 		second:req.body.second,
 		dataNumber:req.body.datanumber,
 		bdLat:req.body.bdLat,
-		bdLon:req.body.bdLon
+		bdLon:req.body.bdLon,
+		ew:req.body.ew,
+		ns:req.body.ns,
+		isPackLocation:req.body.isPackLocation
     });
 	
 

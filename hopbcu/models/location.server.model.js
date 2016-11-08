@@ -14,7 +14,10 @@ var LocationSchema = new mongoose.Schema({
 	second:String,
 	dataNumber:String,
 	bdLat:String,
-	bdLon:String
+	bdLon:String,
+	ew:String,
+	ns:String.
+	isPackLocation:String
 });
 
 mongoose.model('Location',LocationSchema);
