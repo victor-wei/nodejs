@@ -24,7 +24,7 @@ router.get('/findtudou',function(req,res,next){
 		res.render('mymap', {
  							items: docs
 						  });
-	}).sort({_id:-1}).limit(500);
+	}).sort({_id:-1}).limit(1000);
 });
 
 
