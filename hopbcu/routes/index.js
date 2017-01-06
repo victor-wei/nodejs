@@ -5,7 +5,22 @@ var Location = mongoose.model('Location');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index');
+});
+router.get('/index.ejs', function(req, res, next) {
+  res.render('index');
+});
+
+router.get('/contact.ejs', function(req, res, next) {
+  res.render('contact');
+});
+
+router.get('/about.ejs', function(req, res, next) {
+  res.render('about');
+});
+
+router.get('/profile.ejs', function(req, res, next) {
+  res.render('profile');
 });
 
 // router.get('/findtudou',function(req,res,next){
