@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var config = require('./config.js');
 var MongoClient = require('mongodb').MongoClient;
+var db;
 
 // module.exports = function(){
 // 	var db = mongoose.connect(config.mongodb);
@@ -10,7 +11,7 @@ var MongoClient = require('mongodb').MongoClient;
 // };
 
 module.exports = function(){
-	var db = MongoClient.connect(config.mongodb, function(err, db) {
+	MongoClient.connect(config.mongodb, function(err, db) {
 
    if(!err){ //如果连接未出错
      console.log('连接成功');
