@@ -15,11 +15,12 @@ module.exports = function(){
 
    if(!err){ //如果连接未出错
      console.log('连接成功');
-   	}
-	});
-	require('../models/user.server.model.js');
+     require('../models/user.server.model.js');
 	require('../models/location.server.model.js');
 	return db;
+   	}
+	});
+	
 };
 
 
