@@ -26,7 +26,7 @@ module.exports = function(){
 
  //   	 return db;
  //    }
-});
+// });
 	
 };
 
