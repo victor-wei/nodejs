@@ -13,14 +13,17 @@ var MongoClient = require('mongodb').MongoClient;
 module.exports = function(){
 	 require('../models/user.server.model.js');
 	require('../models/location.server.model.js');
-	MongoClient.connect(config.mongodb, function(err, db) {
 
-   if(!err){ //如果连接未出错
-     console.log('连接成功');
-    
+	var db = MongoClient.connect(config.mongodb);
 	return db;
-   	}
-	});
+	// MongoClient.connect(config.mongodb, function(err, db) {
+
+ //   if(!err){ //如果连接未出错
+ //     console.log('连接成功');
+    
+	// return db;
+ //   	}
+	// });
 	
 };
 
